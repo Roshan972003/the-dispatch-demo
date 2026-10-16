@@ -225,7 +225,7 @@ tr:hover td{background:rgba(184,134,43,.05)}
   }
   window.fetch=function(url,opts){
     var u=String(url);
-    if(u.indexOf('/api/admin/state')>-1) return realFetch('state.json');
+    if(u.indexOf('/api/admin/state')>-1) return realFetch('state.json?v=20261016b');
     if(opts&&String(opts.method).toUpperCase()==='POST'){
       if(u.indexOf('/api/admin/voice-check')>-1){var b={};try{b=JSON.parse(opts.body||'{}')}catch(e){} return J(voice(b.text))}
       if(/revoice|preview-commentary|\/fuse/.test(u)) return J({ok:false,message:AIMSG});
